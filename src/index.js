@@ -79,6 +79,9 @@ function Menu() {
 };
 
 function Pizza(props) {
+  console.log(props)
+
+  if (props.pizzaObj.soldOut) return null;
     return (
       <li className="pizza">
          <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name}/>
@@ -96,6 +99,8 @@ function Footer() {
     const openHour = 12;
     const closeHour = 22;
     const isOpen = hour >= openHour && hour <= closeHour;
+
+    // if (!isOpen) return <p>CLOSED</p>
 
     return (
       <footer className="footer">
